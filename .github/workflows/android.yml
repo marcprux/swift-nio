@@ -17,6 +17,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+    - name: Apply Patches
+      run: |
+        curl -fsSL https://raw.githubusercontent.com/finagolfin/swift-android-sdk/refs/heads/main/swift-nio-disable-ecn-tests.patch | git apply
+        curl -fsSL https://raw.githubusercontent.com/finagolfin/swift-android-sdk/refs/heads/main/swift-nio-filesystem.patch | git apply
     - name: Run tests
       uses: skiptools/swift-android-action@v2
 
