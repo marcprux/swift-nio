@@ -24,5 +24,5 @@ jobs:
     - name: Run Local Tests on ${{ matrix.os }}
       run: swift test
     - name: Run Android Emulator Tests
-      uses: skiptools/swift-android-action@veuses: skiptools/swift-android-action@v2
+      uses: skiptools/swift-android-action@v2
 
