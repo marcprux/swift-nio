@@ -13,7 +13,9 @@ jobs:
     strategy:
       matrix:
         os: ["macos-13", "ubuntu-24.04"]
-        apply-patch: ["true", "false"]
+        #apply-patch: ["true", "false"]
+        apply-patch: ["true"]
+        android-api-level: [29, 30, 31, 32, 33, 34, 35]
       fail-fast: false
     steps:
     - name: Checkout
@@ -27,4 +29,7 @@ jobs:
         curl -fsSL https://raw.githubusercontent.com/finagolfin/swift-android-sdk/refs/heads/main/swift-nio-filesystem.patch | git apply
     - name: Run Android Emulator Tests
       uses: skiptools/swift-android-action@v2
+      with:
+        android-api-level: ${{ matrix.android-api-level }}
+
 
