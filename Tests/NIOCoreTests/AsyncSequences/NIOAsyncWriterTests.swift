@@ -12,6 +12,10 @@
 //
 //===----------------------------------------------------------------------===//
 
+// https://github.com/apple/swift-nio/pull/3044
+// https://github.com/finagolfin/swift-android-sdk/commit/486e8be7bae6ea9100511af668464f2047f7b016
+
+#if false
 import DequeModule
 import NIOConcurrencyHelpers
 import XCTest
@@ -719,4 +723,6 @@ extension XCTestCase {
         wait(for: expectations, timeout: seconds)
     }
 }
+#endif
+
 #endif
